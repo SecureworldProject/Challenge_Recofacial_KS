@@ -16,8 +16,6 @@ timekey=[]
 def time(tecla):
     if tecla:
             timekey.append(pygame.time.get_ticks())
-            print(len(timekey))
-            print(timekey)
             if len(timekey) >= 5: 
                 return False
 
@@ -39,18 +37,18 @@ def init(props):
 def executeChallenge():
     print("Python: Enter in  executeChallenge")
     pygame.init()
-    print("enter 0")
+    
     timekey.clear()
     kb.Listener(time).run()
 
-    print("enter 0.1")
+    
     # Mecanismo de lock BEGIN
     # -----------------------
     lock.lockIN("Reco_Facial_Ks")
-    print("enter 1")
+    
     if ((timekey[4]-timekey[3])<1000):
         cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-        print("enter 2")
+        
         
     else:
          # Mecanismo de lock END
@@ -59,7 +57,7 @@ def executeChallenge():
          key_size = 0
          result =(NULL, key_size)
          print ("result:",result)
-         print("enter 3")
+         
          return result
     
     
